@@ -33,6 +33,7 @@ def honeypot():
                 log_file.write(log)
                 log_file.close()
                 print(log)
+                pattern = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
                 ip = re.findall(pattern, log)[0]
                 if ip != "192.168.139.12":  # inserire ip della macchina honeypot
                     if ip1 != ip:
